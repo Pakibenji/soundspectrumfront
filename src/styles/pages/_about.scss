@@ -1,0 +1,36 @@
+.about-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  & h1 {
+    color: $primary;
+    font-family: $font;
+    letter-spacing: 8px;
+    text-shadow: 3px 1px 2px rgba(254, 209, 27, 0.6);
+    font-size: 6rem;
+    padding: 20px;
+  }
+  & .about-text {
+    background: $grey;
+    color: $background;
+    width: 90%;
+    height: auto;
+    border-radius: 10px;
+    border: 5px solid $primary;
+    padding: 30px;
+    font-family: $font2;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    line-height: 2rem;
+    text-align: justify;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    & h3 {
+      padding: 10px;
+    }
+  }
+  
+}

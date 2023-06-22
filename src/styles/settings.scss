@@ -1,0 +1,106 @@
+@font-face {
+  font-family: "title";
+  src: url("../assets/fonts/built_titling_bd.otf");
+}
+@font-face {
+  font-family: "accid";
+  src: url("../assets/fonts/accid___.ttf");
+}
+
+$font: "title";
+$font2: "accid";
+
+$background: black;
+$primary: #fed11b;
+$grey: #b2b2b2;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background: $background;
+  user-select: none;
+}
+
+button {
+  height: 50px;
+  width: 185px;
+  margin: 60px;
+  text-align: center;
+  border-radius: 10px;
+  background: $primary;
+  font-family: $font2;
+  font-size: 1.5rem;
+  letter-spacing: 3px;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.855);
+  border: none;
+  cursor: pointer;
+  transition: 0.5s;
+  box-shadow: 3px 4px 1px -1px rgba(254, 209, 27, 0.25);
+  -webkit-box-shadow: 3px 4px 1px -1px rgba(254, 209, 27, 0.25);
+  -moz-box-shadow: 3px 4px 1px -1px rgba(254, 209, 27, 0.25);
+  &:hover {
+    transform: scale(1.2);
+    transition: 0.5s;
+  }
+}
+@mixin logo {
+  width: 200px;
+  height: auto;
+}
+@mixin form {
+  height: 600px;
+  width: 450px;
+  background: #b2b2b2;
+  border-radius: 10px;
+  margin-top: -50px;
+  margin-bottom: 50px;
+}
+@mixin input {
+  height: 50px;
+  width: 350px;
+  border-radius: 10px;
+  border: 3px solid $primary;
+  text-align: center;
+  font-family: $font2;
+  font-size: 1rem;
+  letter-spacing: 3px;
+}
+@mixin fa-enveloppe {
+  top: 50%;
+  left: 7%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5rem;
+}
+@mixin fa-lock {
+  top: 50%;
+  left: 7%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5rem;
+}
+.link-accueil-container {
+  font-family: $font2;
+  letter-spacing: 1px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 30px;
+  margin-top: 10px;
+  & .link-accueil {
+    text-decoration: 1px underline black;
+    text-underline-offset: 2px;
+    color: $grey;
+    &:hover {
+      color: $primary;
+      text-decoration: 1px underline $primary;
+      text-underline-offset: 2px;
+    }
+  }
+}
