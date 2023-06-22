@@ -23,7 +23,7 @@ const Signup = ({ setCurrUser }) => {
   const formRef = useRef();
 
   const signup = async (userInfo, setCurrUser) => {
-    const url = "http://localhost:3000/signup";
+    const url = "https://soundsprectrum-eee2cb861559.herokuapp.com/signup";
     try {
       const response = await fetch(url, {
         method: "post",
@@ -51,7 +51,6 @@ const Signup = ({ setCurrUser }) => {
     emailjs.sendForm(googleId, templateId, formRef.current, publicKey).then(
       (result) => {
         console.log(result.text);
-        
       },
       (error) => {
         console.log(error.text);

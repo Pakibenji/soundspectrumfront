@@ -6,7 +6,7 @@ const Login = ({ setCurrUser }) => {
   const formRef = useRef();
   const navigate = useNavigate();
   const login = async (userInfo, setCurrUser) => {
-    const url = "http://localhost:3000/login";
+    const url = "https://soundsprectrum-eee2cb861559.herokuapp.com/login";
     try {
       const response = await fetch(url, {
         method: "post",

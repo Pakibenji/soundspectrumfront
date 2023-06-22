@@ -47,7 +47,9 @@ const Home = ({ currUser, setCurrUser }) => {
           <div className="logout">
             <Logout setCurrUser={setCurrUser} />
             {currUser.role === "admin" && (
-              <a href="http://localhost:3000/admin">Panel admin</a>
+              <a href="https://soundsprectrum-eee2cb861559.herokuapp.com/admin">
+                Panel admin
+              </a>
             )}
           </div>
         )}
