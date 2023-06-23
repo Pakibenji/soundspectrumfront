@@ -15,7 +15,7 @@ import rockImage from "../assets/img/rock.webp";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
-export default function Radio({ setFavorites, favorites }) {
+export default function Radio({ setFavorites }) {
   const [stations, setStations] = useState();
   const [stationFilter, setStationFilter] = useState("all");
   const [imageFilter, setImageFilter] = useState(allImage);
@@ -110,7 +110,9 @@ export default function Radio({ setFavorites, favorites }) {
   const toggleFavorite = (station) => {
     const favoritesList = JSON.parse(localStorage.getItem("favorites")) || [];
 
-    const index = favoritesList.findIndex((fav) => fav.id === station.id);
+    const index = favoritesList.findIndex(
+      (fav) => fav.changeuuid === station.changeuuid
+    );
     if (index === -1) {
       favoritesList.push(station);
       alert("Station ajoutée aux favoris");
@@ -119,7 +121,7 @@ export default function Radio({ setFavorites, favorites }) {
     }
 
     localStorage.setItem("favorites", JSON.stringify(favoritesList));
-    setFavorites(station);
+    setFavorites(favoritesList);
   };
   return (
     <div className="radio-card">
@@ -139,7 +141,7 @@ export default function Radio({ setFavorites, favorites }) {
         {stations &&
           stations.map((station, index) => {
             return (
-              <div className="station" key={station.id} index={index}>
+              <div className="station" key={index}>
                 <img src={imageFilter} alt="" />
                 <div className="stationName">
                   <div className="name">{station.name}</div>
@@ -155,9 +157,8 @@ export default function Radio({ setFavorites, favorites }) {
                   autoPlayAfterSrcChange={false}
                 />
                 <div className="favorite-icon">
-                  {JSON.parse(localStorage.getItem("favorites")) &&
-                  JSON.parse(localStorage.getItem("favorites")).find(
-                    (fav) => fav.id === station.id
+                  {JSON.parse(localStorage.getItem("favorites"))?.find(
+                    (fav) => fav.changeuuid === station.changeuuid
                   ) ? (
                     <i
                       className="fa-solid fa-star fa-lg"

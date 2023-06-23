@@ -7,7 +7,7 @@ const Favoris = ({ setFavorites }) => {
   const deleteFavorite = () => {
     const favoritesList = JSON.parse(localStorage.getItem("favorites"));
     const index = favoritesList.findIndex(
-      (station) => station.id === favorites.id
+      (station) => station.changeuuid === favorites.changeuuid
     );
     favoritesList.splice(index, 1);
     localStorage.setItem("favorites", JSON.stringify(favoritesList));
@@ -17,9 +17,9 @@ const Favoris = ({ setFavorites }) => {
   return (
     <div className="favorites">
       {favorites &&
-        favorites.map((station) => {
+        favorites.map((station, index) => {
           return (
-            <div className="station" key={station.id}>
+            <div className="station" key={index}>
               <div className="stationName">
                 <div className="name">{station.name}</div>
               </div>
