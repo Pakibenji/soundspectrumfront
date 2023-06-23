@@ -7,9 +7,23 @@ import About from "./pages/About";
 import Rgpd from "./pages/Rgpd";
 import Profil from "./pages/Profil";
 import NotFound from "./pages/NotFound";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 const App = () => {
-  const [currUser, setCurrUser] = useState("");
+  const [currUser, setCurrUser] = useState(null);
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      fetch("https://soundsprectrum-eee2cb861559.herokuapp.com/login", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+        .then((res) => res.json())
+        .then((user) => setCurrUser(user));
+    }
+  }, []);
+
   return (
     <BrowserRouter>
       <Routes>
