@@ -17,33 +17,23 @@ const FormContact = () => {
       (result) => {
         console.log(result.text);
         form.current.reset();
-        formMess.innerHTML = "<p class='success'>Message envoyé !</p>";
-
-        setTimeout(() => {
-          formMess.innerHTML = "";
-        }, 2500);
+        alert("Message envoyé");
       },
       (error) => {
         console.log(error.text);
-        formMess.innerHTML =
-          "<p class='error'>Une erreur s'est produite, veuillez réessayer</p>";
-
-        setTimeout(() => {
-          formMess.innerHTML = "";
-        }, 2500);
+        alert("Une erreur s'est produite, veuillez réessayer");
       }
     );
   };
 
   return (
     <>
-     
       <section className="title-form">
-      <div className="link-accueil-container">
-        <NavLink className="link-accueil" to="/">
-          <p>retour à l'accueil</p>
-        </NavLink>
-      </div>
+        <div className="link-accueil-container">
+          <NavLink className="link-accueil" to="/">
+            <p>retour à l'accueil</p>
+          </NavLink>
+        </div>
         <h1>contact</h1>
         <div className="form-container">
           <div className="logo">
@@ -75,14 +65,16 @@ const FormContact = () => {
               </div>
               <div className="message-container">
                 <textarea
-                className="input-area"
+                  className="input-area"
                   name="message"
                   placeholder="Écrivez votre message"
                   required
                   max="250"
                 />
               </div>
-              <button className="button-form" type="submit" value="Envoyer">Envoyer</button>
+              <button className="button-form" type="submit" value="Envoyer">
+                Envoyer
+              </button>
             </form>
             <div className="form-message"></div>
           </div>
