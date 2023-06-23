@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { RadioBrowserApi } from "radio-browser-api";
 import AudioPlayer from "react-h5-audio-player";
 import "react-h5-audio-player/lib/styles.css";
 import allImage from "../assets/img/all.webp";
@@ -14,6 +13,7 @@ import rapImage from "../assets/img/rap.webp";
 import retroImage from "../assets/img/retro.webp";
 import rockImage from "../assets/img/rock.webp";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 export default function Radio({ setFavorites, favorites }) {
   const [stations, setStations] = useState();
@@ -28,23 +28,33 @@ export default function Radio({ setFavorites, favorites }) {
   }, [stationFilter]);
 
   const setupApi = async (stationFilter) => {
-    const api = new RadioBrowserApi(fetch.bind(window), "/api");
-
-    const stations = await api
-      .searchStations({
-        language: "english",
-        tag: stationFilter,
-        limit: 30,
-      })
-      .then((data) => {
-        return data;
-      })
-      .catch((error) => {
-        console.log(error);
-        alert("un problème est survenu, rechargement de la page");
-        navigate("/");
-      });
-    return stations;
+    try {
+      const response = await axios.get(
+        `https://de1.api.radio-browser.info/json/stations/bytag/${stationFilter}`
+      );
+      const stations = response.data
+        .filter((station) => station.language === "english")
+        .filter((station, index, self) => {
+          return (
+            index ===
+            self.findIndex(
+              (s) => s.name === station.name && s.url === station.url
+            )
+          );
+        })
+        .slice(0, 30)
+        .map((station) => {
+          return {
+            ...station,
+            urlResolved: station.url.replace("http://", "https://"),
+          };
+        });
+      return stations;
+    } catch (error) {
+      console.log(error);
+      alert("Un problème est survenu, rechargement de la page");
+      navigate("/");
+    }
   };
 
   useEffect(() => {
@@ -129,7 +139,7 @@ export default function Radio({ setFavorites, favorites }) {
         {stations &&
           stations.map((station, index) => {
             return (
-              <div className="station" key={station.id}>
+              <div className="station" key={station.id} index={index}>
                 <img src={imageFilter} alt="" />
                 <div className="stationName">
                   <div className="name">{station.name}</div>
