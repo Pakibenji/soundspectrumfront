@@ -46,7 +46,7 @@ const Login = ({ setCurrUser }) => {
   return (
     <>
       <section className="title-form">
-        <div className="link-accueil-container">
+        <div className="link-home-container">
           <NavLink className="link-accueil" to="/">
             <p>retour à l'accueil</p>
           </NavLink>
@@ -85,7 +85,7 @@ const Login = ({ setCurrUser }) => {
               </button>
             </form>
             <div className="navlink-container">
-              <NavLink className="inscription" to="/signup">
+              <NavLink className="registration" to="/signup">
                 <p>Inscrivez-vous</p>
               </NavLink>
               <span>

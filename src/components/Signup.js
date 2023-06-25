@@ -87,7 +87,7 @@ const Signup = ({ setCurrUser }) => {
   return (
     <>
       <section className="title-form">
-        <div className="link-accueil-container">
+        <div className="link-home-container">
           <NavLink className="link-accueil" to="/">
             <p>retour à l'accueil</p>
           </NavLink>
@@ -121,8 +121,7 @@ const Signup = ({ setCurrUser }) => {
                   max="40"
                 />
                 <i class="fa-solid fa-lock" id="lock"></i>
-                <p className="mdp-validate">
-                  {" "}
+                <p className="password-validate">
                   8 caractères minimum et contenir A-Z, a-z, 0-9, !@#%&
                 </p>
               </div>
@@ -151,12 +150,14 @@ const Signup = ({ setCurrUser }) => {
                   onChange={handleChange}
                 />
                 <label htmlFor="rgpd">
-                  Accepter les <a href="/rgpd">RGPD</a>
+                  <p>
+                    Accepter les <a href="/rgpd">RGPD</a>
+                  </p>
                 </label>
               </div>
             </form>
             <div className="navlink-container">
-              <NavLink className="inscription" to="/login">
+              <NavLink className="registration" to="/login">
                 <p>Se connecter</p>
               </NavLink>
             </div>

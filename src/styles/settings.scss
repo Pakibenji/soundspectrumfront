@@ -54,6 +54,10 @@ button {
 @mixin logo {
   width: 200px;
   height: auto;
+  @media screen and (max-width: 455px) {
+    width: 130px;
+    top: -13%;
+  }
 }
 @mixin form {
   height: 600px;
@@ -62,6 +66,13 @@ button {
   border-radius: 10px;
   margin-top: -50px;
   margin-bottom: 50px;
+  @media screen and (max-width: 455px) {
+    height: 550px;
+    width: 250px;
+  }
+  @media screen and (max-width: 420px) {
+    height: 550px;
+  }
 }
 @mixin input {
   height: 50px;
@@ -72,20 +83,35 @@ button {
   font-family: $font2;
   font-size: 1rem;
   letter-spacing: 3px;
+  @media screen and (max-width: 455px) {
+    width: 200px;
+    height: 35px;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+  }
 }
 @mixin fa-enveloppe {
   top: 50%;
   left: 7%;
   transform: translate(-50%, -50%);
   font-size: 1.5rem;
+  @media screen and (max-width: 455px) {
+    font-size: 0.8rem;
+    top: 40%;
+  }
 }
 @mixin fa-lock {
   top: 50%;
   left: 7%;
   transform: translate(-50%, -50%);
   font-size: 1.5rem;
+  @media screen and (max-width: 455px) {
+    font-size: 0.8rem;
+    top: 40%;
+  }
 }
-.link-accueil-container {
+.link-home-container {
   font-family: $font2;
   letter-spacing: 1px;
   width: 100%;
@@ -102,5 +128,17 @@ button {
       text-decoration: 1px underline $primary;
       text-underline-offset: 2px;
     }
+  }
+}
+
+@media screen and (max-width: 455px) {
+  button {
+    height: 35px;
+    width: 130px;
+    font-size: 1.2rem;
+  }
+  .link-home-container {
+    position: absolute;
+    top: 0;
   }
 }

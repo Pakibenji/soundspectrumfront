@@ -37,13 +37,12 @@ const FormContact = () => {
 
   return (
     <>
-     
       <section className="title-form">
-      <div className="link-accueil-container">
-        <NavLink className="link-accueil" to="/">
-          <p>retour à l'accueil</p>
-        </NavLink>
-      </div>
+        <div className="link-home-container">
+          <NavLink className="link-accueil" to="/">
+            <p>retour à l'accueil</p>
+          </NavLink>
+        </div>
         <h1>contact</h1>
         <div className="form-container">
           <div className="logo">
@@ -75,14 +74,17 @@ const FormContact = () => {
               </div>
               <div className="message-container">
                 <textarea
-                className="input-area"
+                  className="input-area"
+                  id="scroll"
                   name="message"
                   placeholder="Écrivez votre message"
                   required
                   max="250"
                 />
               </div>
-              <button className="button-form" type="submit" value="Envoyer">Envoyer</button>
+              <button className="button-form" type="submit" value="Envoyer">
+                Envoyer
+              </button>
             </form>
             <div className="form-message"></div>
           </div>
