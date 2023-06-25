@@ -191,7 +191,7 @@
     }
   }
 }
-@media screen and (max-width: 670px) {
+@media screen and (max-width: 675px) {
   .header .title h1 {
     font-size: 3rem;
     padding-top: 50px;
@@ -207,5 +207,25 @@
   }
   .radio-main .radios-container .radios-title h2 {
     font-size: 1.5rem;
+  }
+  .rhap_controls-section {
+    align-items: flex-end;
+    padding: 10px;
+    & .rhap_volume-container {
+      align-items: flex-end;
+      z-index: 0;
+      & svg {
+        margin-top: 35px;
+      }
+    }
+    .rhap_button-clear {
+      overflow: visible;
+    }
+    .rhap_play-pause-button {
+      margin-right: 50px;
+    }
+  }
+  .radios-container .station .favorite-icon {
+    margin-left: 30px;
   }
 }
