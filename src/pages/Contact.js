@@ -29,10 +29,8 @@ const FormContact = () => {
   return (
     <>
       <section className="title-form">
-
         <div className="link-home-container">
-
-          <NavLink className="link-accueil" to="/">
+          <NavLink className="link-home" to="/">
             <p>retour à l'accueil</p>
           </NavLink>
         </div>
@@ -68,7 +66,6 @@ const FormContact = () => {
               <div className="message-container">
                 <textarea
                   className="input-area"
-
                   name="message"
                   placeholder="Écrivez votre message"
                   required

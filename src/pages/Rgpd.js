@@ -6,7 +6,7 @@ const Rgpd = () => {
     <>
       <div className="rgpd-container-page">
         <div className="link-home-container">
-          <NavLink className="link-accueil" to="/">
+          <NavLink className="link-home" to="/">
             <p>retour à l'accueil</p>
           </NavLink>
         </div>
