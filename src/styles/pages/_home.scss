@@ -6,7 +6,6 @@
   justify-content: center;
   position: relative;
   padding: 30px;
-  color: white;
   & .logo {
     @include logo;
     position: absolute;
@@ -72,7 +71,7 @@
       text-align: center;
     }
   }
-  & .portée {
+  & .stave {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -106,7 +105,7 @@
         font-family: $font2;
         font-style: normal;
         font-weight: 700;
-        font-size: 32px;
+        font-size: 2rem;
         letter-spacing: 5px;
         text-transform: uppercase;
       }
@@ -152,5 +151,61 @@
       height: auto;
       width: 100%;
     }
+  }
+}
+@media screen and (max-width: 1525px) {
+  .header {
+    position: relative;
+    align-items: center;
+    & .logo {
+      position: relative;
+    }
+    & .title h1 {
+      font-size: 5rem;
+    }
+    & .title p {
+      font-size: 2.5rem;
+    }
+    & button {
+      width: 130px;
+      height: 30px;
+      font-size: 1rem;
+    }
+    & .header-container p {
+      font-size: 1rem;
+    }
+    & .stave img {
+      width: 350px;
+    }
+  }
+}
+@media screen and (max-width: 1250px) {
+  .radios-container .radio-card .filters {
+    width: 300px;
+    height: 200px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+    & span {
+      width: 80px;
+    }
+  }
+}
+@media screen and (max-width: 670px) {
+  .header .title h1 {
+    font-size: 3rem;
+    padding-top: 50px;
+  }
+  button {
+    margin: 30px;
+  }
+  .header .stave img {
+    width: 250px;
+  }
+  .radio-main .favoris-container .favoris-title h2 {
+    font-size: 1.5rem;
+  }
+  .radio-main .radios-container .radios-title h2 {
+    font-size: 1.5rem;
   }
 }

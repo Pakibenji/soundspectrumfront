@@ -31,3 +31,17 @@
     }
   }
 }
+@media screen and (max-width: 600px) {
+  .main .footer-container {
+    height: 130px;
+    justify-items: center;
+    justify-content: center;
+    & ul {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      & li {
+        margin: 5px;
+      }
+    }
+  }
+}
