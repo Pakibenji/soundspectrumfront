@@ -8,7 +8,7 @@ import Favoris from "../components/Favoris";
 import { useState } from "react";
 
 const Home = ({ currUser, setCurrUser }) => {
-  const [favorites, setFavorites] = useState(null);
+  const [favorites, setFavorites] = useState([]);
   return (
     <>
       <section className="header">
@@ -75,7 +75,7 @@ const Home = ({ currUser, setCurrUser }) => {
               <h2>radios</h2>
             </div>
             <div className="radios">
-              <Radio favorites={favorites} setFavorites={setFavorites} />
+              <Radio setFavorites={setFavorites} />
             </div>
           </div>
           <Footer />

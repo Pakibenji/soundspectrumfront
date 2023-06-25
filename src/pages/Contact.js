@@ -17,20 +17,11 @@ const FormContact = () => {
       (result) => {
         console.log(result.text);
         form.current.reset();
-        formMess.innerHTML = "<p class='success'>Message envoyé !</p>";
-
-        setTimeout(() => {
-          formMess.innerHTML = "";
-        }, 2500);
+        alert("Message envoyé");
       },
       (error) => {
         console.log(error.text);
-        formMess.innerHTML =
-          "<p class='error'>Une erreur s'est produite, veuillez réessayer</p>";
-
-        setTimeout(() => {
-          formMess.innerHTML = "";
-        }, 2500);
+        alert("Une erreur s'est produite, veuillez réessayer");
       }
     );
   };
@@ -38,7 +29,9 @@ const FormContact = () => {
   return (
     <>
       <section className="title-form">
+
         <div className="link-home-container">
+
           <NavLink className="link-accueil" to="/">
             <p>retour à l'accueil</p>
           </NavLink>
@@ -75,7 +68,7 @@ const FormContact = () => {
               <div className="message-container">
                 <textarea
                   className="input-area"
-                  id="scroll"
+
                   name="message"
                   placeholder="Écrivez votre message"
                   required

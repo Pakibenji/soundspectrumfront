@@ -80,7 +80,7 @@ button {
   border-radius: 10px;
   border: 3px solid $primary;
   text-align: center;
-  font-family: $font2;
+  font-family: $font2, sans-serif;
   font-size: 1rem;
   letter-spacing: 3px;
   @media screen and (max-width: 455px) {
