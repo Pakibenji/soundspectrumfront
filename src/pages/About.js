@@ -6,7 +6,7 @@ const About = () => {
     <>
       
       <div className="about-container">
-      <div className="link-accueil-container">
+      <div className="link-home-container">
         <NavLink className="link-accueil" to="/">
           <p>retour à l'accueil</p>
         </NavLink>
