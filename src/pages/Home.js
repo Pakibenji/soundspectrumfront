@@ -32,15 +32,12 @@ const Home = ({ currUser, setCurrUser }) => {
         {currUser == null && (
           <div className="header-container">
             <p className="soundspectrum-description">
-              Bienvenue sur Sound Spectrum, votre destination ultime pour le
-              streaming radio ! Découvrez un univers musical infini avec nos
-              nombreuses stations soigneusement sélectionnées couvrant tous les
-              genres. Explorez de nouveaux horizons et plongez dans vos styles
-              préférés grâce à notre système de filtrage intuitif. Créez votre
-              liste de favoris et profitez de votre musique préférée à tout
-              moment. Rejoignez-nous dès maintenant pour une expérience musicale
-              fluide et immersive. Inscrivez-vous et laissez-vous emporter par
-              la diversité sonore de Sound Spectrum.
+              Plongez dans un monde musical infini avec Sound Spectrum :
+              explorez, filtrez et vibrez au rythme de vos genres préférés.
+              Rejoignez-nous dès maintenant pour une expérience immersive et
+              laissez-vous emporter par la diversité sonore de notre plateforme.
+              Inscrivez-vous et laissez votre passion pour la musique s'épanouir
+              !
             </p>
           </div>
         )}
