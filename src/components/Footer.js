@@ -22,7 +22,11 @@ const Footer = () => {
             </NavLink>
           </li>
           <li>
-            <a href="https://www.radio-browser.info/" target="_blank">
+            <a
+              className="link-footer"
+              href="https://www.radio-browser.info/"
+              target="_blank"
+            >
               api
             </a>
           </li>
