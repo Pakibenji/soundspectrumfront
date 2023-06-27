@@ -9,6 +9,7 @@ import { useState } from "react";
 
 const Home = ({ currUser, setCurrUser }) => {
   const [favorites, setFavorites] = useState([]);
+
   return (
     <>
       <section className="header">

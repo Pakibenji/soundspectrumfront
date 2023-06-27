@@ -110,7 +110,7 @@ const Signup = ({ setCurrUser }) => {
                   required
                   max="40"
                 />
-                <i class="fa-regular fa-envelope" id="email"></i>
+                <i className="fa-regular fa-envelope" id="email"></i>
               </div>
               <div className="password-container">
                 <input
@@ -138,7 +138,7 @@ const Signup = ({ setCurrUser }) => {
                   required
                   max="40"
                 />
-                <i class="fa-solid fa-lock" id="lock"></i>
+                <i className="fa-solid fa-lock" id="lock"></i>
               </div>
               <button className="button-form" type="submit">
                 s'inscrire

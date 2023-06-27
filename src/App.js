@@ -14,7 +14,7 @@ const App = () => {
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (token) {
-      fetch("https://soundsprectrum-eee2cb861559.herokuapp.com/login", {
+      fetch("https://soundsprectrum-eee2cb861559.herokuapp.com/users", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -23,7 +23,6 @@ const App = () => {
         .then((user) => setCurrUser(user));
     }
   }, []);
-
   return (
     <BrowserRouter>
       <Routes>
@@ -42,7 +41,7 @@ const App = () => {
         <Route path="/contact" element={<Contact />} />
         <Route path="/about" element={<About />} />
         <Route path="/rgpd" element={<Rgpd />} />
-        <Route path="/profil" element={<Profil />} />
+        <Route path="/profil" element={<Profil setCurrUser={setCurrUser} />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
