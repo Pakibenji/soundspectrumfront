@@ -36,9 +36,11 @@ const FormContact = () => {
         </div>
         <h1>contact</h1>
         <div className="form-container">
-          <div className="logo">
-            <img src={logo} alt="logo sound spectrum" />
-          </div>
+          <NavLink to="/">
+            <div className="logo">
+              <img src={logo} alt="logo sound spectrum" />
+            </div>
+          </NavLink>
           <div className="form-card">
             <form ref={form} onSubmit={sendEmail}>
               <div className="name-container">

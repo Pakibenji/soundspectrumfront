@@ -24,6 +24,7 @@
 
     & .logo {
       @include logo;
+      width: 50%;
       display: flex;
       flex-direction: column;
       position: absolute;
@@ -195,6 +196,7 @@
   h1 {
     padding-top: 250px;
   }
+
 }
 
 @media screen and (min-width: 320px) and (max-width: 568px) {
@@ -202,4 +204,3 @@
     padding-top: 380px;
   }
 }
-
