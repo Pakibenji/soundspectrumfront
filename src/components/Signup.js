@@ -94,9 +94,11 @@ const Signup = ({ setCurrUser }) => {
         </div>
         <h1>Formulaire d'inscription</h1>
         <div className="form-container">
-          <div className="logo">
-            <img src={logo} alt="logo sound spectrum" />
-          </div>
+          <NavLink to="/">
+            <div className="logo">
+              <img src={logo} alt="logo sound spectrum" />
+            </div>
+          </NavLink>
           <div className="form-card">
             <form ref={formRef} onSubmit={handleSubmit}>
               <div className="email-container">

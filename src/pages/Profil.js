@@ -72,9 +72,11 @@ const Profil = () => {
         </div>
         <h1>profil</h1>
         <div className="form-container">
-          <div className="logo">
-            <img src={logo} alt="logo sound spectrum" />
-          </div>
+          <NavLink to="/">
+            <div className="logo">
+              <img src={logo} alt="logo sound spectrum" />
+            </div>
+          </NavLink>
           <div className="form-card">
             <form>
               <div className="email-container">
