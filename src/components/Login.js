@@ -43,6 +43,7 @@ const Login = ({ setCurrUser }) => {
     login(userInfo, setCurrUser);
     e.target.reset();
   };
+
   return (
     <>
       <section className="title-form">
