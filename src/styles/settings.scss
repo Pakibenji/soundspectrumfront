@@ -52,8 +52,6 @@ button {
   }
 }
 @mixin logo {
-  width: 200px;
-  height: auto;
   @media screen and (max-width: 455px) {
     width: 130px;
     top: -13%;
