@@ -142,7 +142,10 @@ export default function Radio({ setFavorites }) {
           stations.map((station, index) => {
             return (
               <div className="station" key={index}>
-                <img src={imageFilter} alt="" />
+                <img
+                  src={imageFilter}
+                  alt="image d'arrière plan du lecteur sélectionnée en fonction du genre musical choisi"
+                />
                 <div className="stationName">
                   <div className="name">{station.name}</div>
                 </div>
