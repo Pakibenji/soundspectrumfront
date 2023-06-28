@@ -52,7 +52,7 @@ const Home = ({ currUser, setCurrUser }) => {
           </div>
         )}
         <div className="stave">
-          <img src={notes} alt="gif portée" />
+          <img src={notes} alt="gif portée musicale" />
         </div>
       </section>
       {currUser != null && (
